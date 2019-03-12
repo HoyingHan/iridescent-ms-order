@@ -8,9 +8,9 @@ import javax.persistence.Id;
 import java.util.Date;
 
 /**
- * Description:
+ * Description: 订单信息
  *
- * @author hanhongying@corp.netease.com
+ * @author 陌北有棵树
  * @version 2019/3/13
  */
 @DynamicUpdate

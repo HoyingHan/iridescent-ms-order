@@ -8,9 +8,9 @@ import javax.persistence.Id;
 import java.util.Date;
 
 /**
- * Description:
+ * Description: 购物车
  *
- * @author 购物车
+ * @author 陌北有棵树
  * @version 2019/3/13
  */
 @DynamicUpdate
