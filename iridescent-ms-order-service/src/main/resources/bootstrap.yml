@@ -7,6 +7,10 @@ spring:
         enabled: true
         service-id: CONFIG
       profile: test
+    stream:
+      bindings:
+        myMessage:
+          group: order
   rabbitmq:
     host: localhost
     port: 5672
