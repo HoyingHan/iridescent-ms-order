@@ -15,6 +15,7 @@
     <properties>
         <java.version>1.8</java.version>
         <iridescent-ms-order-common.version>0.0.1-SNAPSHOT</iridescent-ms-order-common.version>
+        <iridescent-ms-order-api.version>0.0.1-SNAPSHOT</iridescent-ms-order-api.version>
     </properties>
 
 
@@ -67,6 +68,14 @@
                 <artifactId>iridescent-ms-order-common</artifactId>
                 <version>${iridescent-ms-order-common.version}</version>
             </dependency>
+
+        <dependency>
+            <groupId>com.iridescent</groupId>
+            <artifactId>iridescent-ms-order-api</artifactId>
+            <version>${iridescent-ms-order-api.version}</version>
+        </dependency>
+
+
         </dependencies>
 
 
