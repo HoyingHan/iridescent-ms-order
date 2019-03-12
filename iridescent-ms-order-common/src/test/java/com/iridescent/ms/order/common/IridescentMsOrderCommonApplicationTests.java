@@ -1,4 +1,4 @@
-package com.iridescent.iridescent.ms.order.common;
+package com.iridescent.ms.order.common;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

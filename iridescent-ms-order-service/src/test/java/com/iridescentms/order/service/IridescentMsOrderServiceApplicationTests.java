@@ -1,4 +1,4 @@
-package com.iridescent.iridescent.ms.order.service;
+package com.iridescentms.order.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.iridescent.iridescent.ms.order.service.message;
+package com.iridescentms.order.service.message;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.stream.annotation.EnableBinding;
