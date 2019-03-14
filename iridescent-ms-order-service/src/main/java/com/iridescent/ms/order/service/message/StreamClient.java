@@ -1,4 +1,4 @@
-package com.iridescentms.order.service.message;
+package com.iridescent.ms.order.service.message;
 
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;

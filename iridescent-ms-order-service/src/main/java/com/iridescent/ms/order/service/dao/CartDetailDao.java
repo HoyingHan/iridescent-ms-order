@@ -1,6 +1,6 @@
-package com.iridescentms.order.service.dao;
+package com.iridescent.ms.order.service.dao;
 
-import com.iridescentms.order.service.domain.CartDetail;
+import com.iridescent.ms.order.service.domain.CartDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CartDetailDao extends JpaRepository<CartDetail, String> {

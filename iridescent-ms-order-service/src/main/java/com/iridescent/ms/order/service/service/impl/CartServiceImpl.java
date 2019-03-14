@@ -1,14 +1,14 @@
-package com.iridescentms.order.service.service.impl;
+package com.iridescent.ms.order.service.service.impl;
 
 import com.google.common.collect.Lists;
 import com.iridescent.ms.order.api.CartBaseApi;
 import com.iridescent.ms.order.common.utils.BeanConvertUtils;
 import com.iridescent.ms.order.common.vo.CartDetailVo;
+import com.iridescent.ms.order.service.dao.CartDetailDao;
+import com.iridescent.ms.order.service.domain.CartDetail;
 import com.iridescent.ms.product.api.ProductInfoApi;
 import com.iridescent.ms.product.common.vo.ProductInfoVo;
-import com.iridescentms.order.service.dao.CartDetailDao;
-import com.iridescentms.order.service.domain.CartDetail;
-import com.iridescentms.order.service.service.CartService;
+import com.iridescent.ms.order.service.service.CartService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,7 +30,7 @@ public class CartServiceImpl implements CartService, CartBaseApi {
     @Resource
     private CartDetailDao cartDetailDao;
 
-    @Resource
+    @Resource(name = "productInfoApi")
     private ProductInfoApi productInfoApi;
 
 

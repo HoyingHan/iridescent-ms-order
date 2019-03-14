@@ -1,4 +1,4 @@
-package com.iridescentms.order.service.domain;
+package com.iridescent.ms.order.service.domain;
 
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
