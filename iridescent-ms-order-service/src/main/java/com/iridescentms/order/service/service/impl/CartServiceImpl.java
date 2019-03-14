@@ -9,8 +9,10 @@ import com.iridescent.ms.product.common.vo.ProductInfoVo;
 import com.iridescentms.order.service.dao.CartDetailDao;
 import com.iridescentms.order.service.domain.CartDetail;
 import com.iridescentms.order.service.service.CartService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -21,19 +23,20 @@ import java.util.List;
  * @author 陌北有棵树
  * @version 2019/3/13
  */
-@Service("CartService")
+@RestController
 public class CartServiceImpl implements CartService, CartBaseApi {
 
 
     @Resource
     private CartDetailDao cartDetailDao;
 
-    @Autowired
+    @Resource
     private ProductInfoApi productInfoApi;
 
 
     @Override
-    public Boolean addToCart(List<String> productIds) {
+    @PostMapping(value = "/rest/api/v1/order/cart/add")
+    public Boolean addToCart(@RequestParam(value = "productIds", required = false) List<String> productIds) {
 
         List<ProductInfoVo> productInfoVoList = productInfoApi.getProductListByIds(productIds);
         List<CartDetailVo> cartDetailList = Lists.newArrayList();
@@ -48,9 +51,9 @@ public class CartServiceImpl implements CartService, CartBaseApi {
     }
 
 
-
     @Override
-    public List<CartDetailVo> getCartDetailList() {
+    @GetMapping(value = "/rest/api/v1/order/cart/list")
+    public List<CartDetailVo> getCartDetailList(@RequestParam(value = "cartId", required = false) String cartId) {
         return BeanConvertUtils.deepSafeConvertByFastJson(cartDetailDao.findAll(), CartDetail.class, CartDetailVo.class);
     }
 

@@ -1,10 +1,6 @@
 package com.iridescentms.order.service.service;
 
-import com.iridescent.ms.order.common.vo.CartDetailVo;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.List;
-
+import com.iridescent.ms.order.api.CartBaseApi;
 
 
 /**
@@ -13,11 +9,7 @@ import java.util.List;
  * @author 陌北有棵树
  * @version 2019/3/13
  */
-public interface CartService {
+public interface CartService extends CartBaseApi {
 
-
-    Boolean addToCart(@RequestParam(value = "productIds", required = false) List<String> productIds);
-
-    List<CartDetailVo> getCartDetailList();
 
 }

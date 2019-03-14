@@ -1,9 +1,8 @@
 package com.iridescent.ms.order.api;
 
 import com.iridescent.ms.order.common.vo.CartDetailVo;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -13,15 +12,16 @@ import java.util.List;
  * @author 陌北有棵树
  * @version 2019/3/13
  */
+@FeignClient("cartBaseApi")
 public interface CartBaseApi {
 
 
-    @RequestMapping(value = "/rest/api/v1/order/cart/add", method = RequestMethod.POST)
+    @PostMapping(value = "/rest/api/v1/order/cart/add")
     Boolean addToCart(@RequestParam(value = "productIds", required = false) List<String> productIds);
 
 
-    @RequestMapping(value = "/rest/api/v1/order/cart/list", method = RequestMethod.GET)
-    List<CartDetailVo> getCartDetailList();
+    @GetMapping(value = "/rest/api/v1/order/cart/list")
+    List<CartDetailVo> getCartDetailList(@RequestParam(value = "cartId", required = false) String cartId);
 
 
 

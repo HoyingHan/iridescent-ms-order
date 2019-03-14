@@ -1,17 +1,17 @@
 package com.iridescent.ms.order.api;
 
 import com.iridescent.ms.order.common.vo.OrderDetailVo;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.*;
 
+@FeignClient("orderBaseApi")
 public interface OrderBaseApi {
 
-    @RequestMapping(value = "/rest/api/v1/order/pay", method = RequestMethod.POST)
+    @PostMapping(value = "/rest/api/v1/order/pay")
     Boolean payOrder(@RequestParam(value = "cartId", required = false) String cartId);
 
 
-    @RequestMapping(value = "/rest/api/v1/order/getOrderDetailByProductId", method = RequestMethod.GET)
+    @GetMapping(value = "/rest/api/v1/order/getOrderDetailByProductId")
     OrderDetailVo getOrderDetailByProductId(@RequestParam(value = "productId", required = false) String productId);
 
 

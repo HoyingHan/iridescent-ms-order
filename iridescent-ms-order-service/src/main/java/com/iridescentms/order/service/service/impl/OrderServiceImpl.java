@@ -10,6 +10,10 @@ import com.iridescentms.order.service.service.CartService;
 import com.iridescentms.order.service.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -20,7 +24,7 @@ import java.util.List;
  * @author 陌北有棵树
  * @version 2019/3/13
  */
-@Service("OrderService")
+@RestController
 public class OrderServiceImpl implements OrderService, OrderBaseApi {
 
     @Resource
@@ -31,9 +35,10 @@ public class OrderServiceImpl implements OrderService, OrderBaseApi {
 
 
     @Override
-    public Boolean payOrder(String cartId) {
+    @PostMapping(value = "/rest/api/v1/order/pay")
+    public Boolean payOrder(@RequestParam(value = "cartId", required = false) String cartId) {
 
-        List<CartDetailVo> cartDetails = cartService.getCartDetailList();
+        List<CartDetailVo> cartDetails = cartService.getCartDetailList(cartId);
         List<String> productIds = PropertyExtractUtils.getByPropertyValue(cartDetails, "productId");
         productIds.forEach(id -> {
 
@@ -44,7 +49,8 @@ public class OrderServiceImpl implements OrderService, OrderBaseApi {
     }
 
     @Override
-    public OrderDetailVo getOrderDetailByProductId(String productId) {
+    @GetMapping(value = "/rest/api/v1/order/getOrderDetailByProductId")
+    public OrderDetailVo getOrderDetailByProductId(@RequestParam(value = "productId", required = false) String productId){
         // orderDetailDao.findOne(productId);
         return null;
     }

@@ -1,4 +1,4 @@
-package com.iridescentms.order.service.boot;
+package com.iridescentms.order.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +16,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@ComponentScan(basePackages = {"com.iridescent.ms.product","com.iridescent.ms.order"})
+@ComponentScan(basePackages = {"com.iridescent.ms.product.api"})
 public class IridescentMsOrderServiceApplication {
 
     public static void main(String[] args) {
