@@ -1,7 +1,7 @@
 package com.iridescent.ms.order.api;
 
 import com.iridescent.ms.order.common.vo.CartDetailVo;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
  * @author 陌北有棵树
  * @version 2019/3/13
  */
-@FeignClient("cartBaseApi")
+@FeignClient("order")
 public interface CartBaseApi {
 
 
