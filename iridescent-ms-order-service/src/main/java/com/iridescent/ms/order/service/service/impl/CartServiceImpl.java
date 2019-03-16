@@ -9,6 +9,7 @@ import com.iridescent.ms.order.service.domain.CartDetail;
 import com.iridescent.ms.product.api.ProductInfoApi;
 import com.iridescent.ms.product.common.vo.ProductInfoVo;
 import com.iridescent.ms.order.service.service.CartService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,7 +31,7 @@ public class CartServiceImpl implements CartService, CartBaseApi {
     @Resource
     private CartDetailDao cartDetailDao;
 
-    @Resource(name = "productInfoApi")
+    @Autowired
     private ProductInfoApi productInfoApi;
 
 

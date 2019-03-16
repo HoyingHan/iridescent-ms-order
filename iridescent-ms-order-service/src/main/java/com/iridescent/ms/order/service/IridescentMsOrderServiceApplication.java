@@ -29,15 +29,7 @@ import org.springframework.context.annotation.ComponentScan;
 public class IridescentMsOrderServiceApplication {
 
     public static void main(String[] args) {
-        ApplicationContext context = SpringApplication.run(IridescentMsOrderServiceApplication.class, args);
-        String[] beanNames = context.getBeanDefinitionNames();
-        log.info("bean总数:{}", context.getBeanDefinitionCount());
-        int i = 0;
-        for (String str : beanNames) {
-            log.info("{},beanName:{}", ++i, str);
-        }
-
-
+       SpringApplication.run(IridescentMsOrderServiceApplication.class, args);
     }
 
 }
