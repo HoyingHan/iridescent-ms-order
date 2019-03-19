@@ -22,7 +22,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableDiscoveryClient
 @ComponentScan(basePackages = {"com.iridescent.ms.product.api","com.iridescent.ms.order.api",
-                                "com.iridescent.ms.order.service.service"})
+                                "com.iridescent.ms.order.service.service","com.iridescent.ms.product.api.fallback"})
 @EnableFeignClients(basePackages = {"com.iridescent.ms.product.api"})
 
 @Slf4j
